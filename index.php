@@ -38,6 +38,7 @@ if(isset($_POST['username'])){
                 unset($_SESSION['level']);
                 break;
         }
+        $db->update('users',array('login'=>wkt(),'logged'=>'1'),"email='$username'");
         eksyen('Selamat datang, '. $data[0]['nama'].' sebagai '.$data[0]['level'],'admin/');
     }else{
         eksyen('User tidak ditemukan','');

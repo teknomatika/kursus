@@ -68,7 +68,7 @@ $db->connect();
             <ul class="nav navbar-top-links navbar-right">
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                        <i class="fa fa-user fa-fw"></i> <?=strtoupper($_SESSION['nama']);?>  <i class="fa fa-caret-down"></i>
+                        <i class="fa fa-user fa-fw"></i> <?=$_SESSION['nama'];?>  <i class="fa fa-caret-down"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
                         <li><a href="?p=profil"><i class="fa fa-user fa-fw"></i> Ubah Profil</a>

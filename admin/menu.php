@@ -41,20 +41,6 @@ switch ($_SESSION['level']) {
                                 </li>
                             </ul>
                         </li>
-                		<li>
-                            <a href="#"><i class="fa fa-dollar fa-fw"></i> Penggajian<span class="fa arrow"></span></a>
-                            <ul class="nav nav-second-level">
-                                <li>
-                                    <a href="?p=gaji_input">Input Gaji</a>
-                                </li>
-                                <li>
-                                    <a href="?p=gaji">Data Penggajian</a>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                        	<a href="?p=laporan"><i class="fa fa-globe fa-fw"></i> Laporan</a>
-                        </li>
 <?php                		
                 		break;
                 	
