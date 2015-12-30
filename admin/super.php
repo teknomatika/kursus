@@ -40,7 +40,7 @@
 			</td>
 			<td class="text-center">
 				<p><?=tbl_ubah('?p=super&act=ubah&id='.$d['id']);?> <?=tbl_hapus('?p=super&act=hapus&id='.$d['id']);?></p>
-				<p><a href="?p=biaya&program=<?=$d['id'];?>&x=<?=base64_encode($d['tahap']);?>" class="btn btn-xs btn-block btn-info">Biaya</a></p>
+				<p><a href="?p=biayas&program=<?=$d['id'];?>&x=<?=base64_encode($d['tahap']);?>" class="btn btn-xs btn-block btn-info">Biaya</a></p>
 			</td>
 		</tr>
 		<?php } ?>

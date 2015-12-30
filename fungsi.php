@@ -8,6 +8,12 @@ function konvert($tabel,$id,$kolom){
 	return $d[$kolom];
 }
 
+function biaya($program,$tahap){
+	$q = mysql_query("select * from tahap where idprogram='$program' and tahap='$tahap'");
+	$d = mysql_fetch_array($q);
+	return $d['biaya'];
+}
+
 function id(){
 	$q = mysql_query("select uuid() as id");
 	$d = mysql_fetch_array($q);
