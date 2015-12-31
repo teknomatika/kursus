@@ -30,7 +30,18 @@ switch ($_SESSION['level']) {
                                 </li>
                             </ul>
                         </li>
-                		<li>
+                        <li>
+                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> Kelas<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="?p=kelas&act=ubah">Tambah Kelas</a>
+                                </li>
+                                <li>
+                                    <a href="?p=kelas">Data Kelas</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
                             <a href="#"><i class="fa fa-user fa-fw"></i> Users<span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
@@ -40,6 +51,20 @@ switch ($_SESSION['level']) {
                                     <a href="?p=user">Data User</a>
                                 </li>
                             </ul>
+                        </li>
+                        <li>
+                            <a href="#"><i class="fa fa-globe fa-fw"></i> Pendaftaran<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="?p=daftar">Siswa Baru</a>
+                                </li>
+                                <li>
+                                    <a href="?p=daftarlagi">Siswa Terdaftar</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                        	<a href="?p=siswa"><i class="fa fa-globe fa-fw"></i> Data Siswa</a>
                         </li>
 <?php                		
                 		break;

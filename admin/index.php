@@ -38,6 +38,7 @@ $db->connect();
 
     <!-- Custom Fonts -->
     <link href="../bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="../bower_components/jquery-ui/jquery-ui.min.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -195,6 +196,7 @@ $db->connect();
 
     <!-- jQuery -->
     <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="../bower_components/jquery-ui/jquery-ui.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
     <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
@@ -216,6 +218,108 @@ $db->connect();
     $(document).ready(function() {
         $('#tbl,#tbl2,#tbl3').DataTable({
                 responsive: true
+        });
+
+        $( "#datepicker" ).datepicker({
+            changeYear: true,
+            changeMonth: true,
+            dateFormat:"yy-mm-dd"
+        });
+
+        // js kode kelas
+        var kodekelas = [
+            <?php
+            $db = new Database();
+            $db->connect();
+            $db->select('kelas','kode'); // Table name, Column Names, JOIN, WHERE conditions, ORDER BY conditions
+            $res = $db->getResult();
+            foreach ($res as $d) {
+                echo "\"".$d['kode']."\",";
+            }
+            ?>
+        ];
+        $("#kodekelas").autocomplete({
+            source: kodekelas
+        });
+
+        // js asal sekolah
+        var namakelas = [
+            <?php
+            $db = new Database();
+            $db->connect();
+            $db->select('kelas','nama'); // Table name, Column Names, JOIN, WHERE conditions, ORDER BY conditions
+            $res = $db->getResult();
+            foreach ($res as $d) {
+                echo "\"".$d['nama']."\",";
+            }
+            ?>
+        ];
+        $("#namakelas").autocomplete({
+            source: namakelas
+        });
+
+        // js asal sekolah
+        var asalsekolah = [
+            <?php
+            $db = new Database();
+            $db->connect();
+            $db->select('siswa','sekolah'); // Table name, Column Names, JOIN, WHERE conditions, ORDER BY conditions
+            $res = $db->getResult();
+            foreach ($res as $d) {
+                echo "\"".$d['sekolah']."\",";
+            }
+            ?>
+        ];
+        $("#inputSekolah").autocomplete({
+            source: asalsekolah
+        });
+
+        // js PTN
+        var ptn = [
+            <?php
+            $db = new Database();
+            $db->connect();
+            $db->select('ptn','nama'); // Table name, Column Names, JOIN, WHERE conditions, ORDER BY conditions
+            $res = $db->getResult();
+            foreach ($res as $d) {
+                echo "\"".$d['nama']."\",";
+            }
+            ?>
+        ];
+        $("#inputPtn1,#inputPtn2,#inputPtn3").autocomplete({
+            source: ptn
+        });
+
+        // js job ortu
+        var jobs = [
+            <?php
+            $db = new Database();
+            $db->connect();
+            $db->select('siswa','kerjaortu'); // Table name, Column Names, JOIN, WHERE conditions, ORDER BY conditions
+            $res = $db->getResult();
+            foreach ($res as $d) {
+                echo "\"".$d['kerjaortu']."\",";
+            }
+            ?>
+        ];
+        $("#inputPekerjaan").autocomplete({
+            source: jobs
+        });
+
+        // js kodepos
+        var kodepos = [
+            <?php
+            $db = new Database();
+            $db->connect();
+            $db->select('siswa','kodepos'); // Table name, Column Names, JOIN, WHERE conditions, ORDER BY conditions
+            $res = $db->getResult();
+            foreach ($res as $d) {
+                echo "\"".$d['kodepos']."\",";
+            }
+            ?>
+        ];
+        $("#inputKodepos").autocomplete({
+            source: kodepos
         });
     });
     </script>
