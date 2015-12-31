@@ -99,7 +99,17 @@ $db->connect();
         <div id="page-wrapper">
             <div class="container-fluid">
                 <div class="row">
-                   
+                    <?php 
+                    if(isset($_GET['p'])){
+                        if(file_exists($_GET['p'].'.php')){
+                            include $_GET['p'].'.php';
+                        }else{
+                            eksyen('Halaman tidak ditemukan','index.php');
+                        }
+                    }else{
+                    ?>
+                    <h1>Admin Panel</h1>
+                    <?php } ?>
                 </div>
                 <!-- /.row -->
             </div>
